@@ -85,13 +85,14 @@ jobs:
           BEARER_TOKEN: ${{ secrets.BEARER_TOKEN }}
           D_TOKEN: ${{ secrets.D_TOKEN }}
         run: |
+          npm install -g pnpm
           cd backend
           sed -i "s|substore_workers_database_name|$DATABASE_NAME|g" wrangler.toml
           sed -i "s|substore_workers_database_id|$DATABASE_ID|g" wrangler.toml
           sed -i "s|substore_workers_bearer_token|$BEARER_TOKEN|g" wrangler.toml
           sed -i "s|substore_workers_d_token|$D_TOKEN|g" wrangler.toml
           pnpm install -g wrangler
-          pnpm install
+          pnpm install --no-frozen-lockfile
           CLOUDFLARE_API_TOKEN="$CLOUDFLARE_API_TOKEN" wrangler deploy > /dev/null
 
       # - name: Sync to GitLab
