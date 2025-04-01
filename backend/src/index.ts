@@ -11,7 +11,7 @@ import registerPreviewRoutes from './restful/preview';
 import registerSortingRoutes from './restful/sort';
 import registerMiscRoutes from './restful/miscs';
 import registerNodeInfoRoutes from './restful/node-info';
-import { setDBClient } from './db';
+import { setDBClient } from './db.ts';
 import { setEnvironment } from './env';
 
 type Bindings = {
