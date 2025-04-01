@@ -12,7 +12,7 @@ import registerSortingRoutes from './restful/sort';
 import registerMiscRoutes from './restful/miscs';
 import registerNodeInfoRoutes from './restful/node-info';
 import { setDBClient } from './db.ts';
-import { setEnvironment } from './env';
+import { setEnvironment } from './env.ts';
 
 type Bindings = {
     DB: D1Database
